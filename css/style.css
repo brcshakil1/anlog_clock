@@ -1,0 +1,107 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #9fa5d5, #e8f5c8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, .5);
+    position: relative;
+}
+
+.clock .number {
+    --rotation: 0;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+}
+
+.clock .number1 {--rotation: 30deg}
+.clock .number2 {--rotation: 60deg}
+.clock .number3 {--rotation: 90deg}
+.clock .number4 {--rotation: 120deg}
+.clock .number5 {--rotation: 150deg}
+.clock .number6 {--rotation: 180deg}
+.clock .number7 {--rotation: 210deg}
+.clock .number8 {--rotation: 240deg}
+.clock .number9 {--rotation: 270deg}
+.clock .number10 {--rotation: 300deg}
+.clock .number11 {--rotation: 330deg}
+
+.clock .number1 .num1 {transform: rotate(330deg)}
+.clock .number2 .num2 {transform: rotate(300deg)}
+.clock .number3 .num3 {transform: rotate(270deg)}
+.clock .number4 .num4 {transform: rotate(240deg)}
+.clock .number5 .num5 {transform: rotate(210deg)}
+.clock .number6 .num6 {transform: rotate(180deg)}
+.clock .number7 .num7 {transform: rotate(150deg)}
+.clock .number8 .num8 {transform: rotate(120deg)}
+.clock .number9 .num9 {transform: rotate(90deg)}
+.clock .number10 .num10 {transform: rotate(60deg)}
+.clock .number11 .num11 {transform: rotate(30deg)}
+
+.clock .hand {
+    --rotation: 0;
+
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: 11;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg) );
+
+}
+
+.clock::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: #000;
+    z-index: 11;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.clock .seconds{ 
+    width: 5px;
+    height: 45%;
+    background-color: red;
+}
+
+.clock .minutes{ 
+    width: 7px;
+    height: 40%;
+    background-color: black;
+}
+
+.clock .hour{ 
+    width: 10px;
+    height: 35%;
+    background-color: black;
+}
+
+
+
+
